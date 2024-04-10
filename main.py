@@ -6,7 +6,12 @@ def encoder(password):        #Ally Seiverd
 
     return new_password
 
-
+def decoder(new_password):
+    password=''
+    for char in new_password:
+        y = int(char)-3
+        password += str(y)
+    return password
 
 def main():
     while True:
@@ -17,6 +22,9 @@ def main():
             encoded=encoder(password)
             print("Your password has been encoded and stored!")
             print()
+        if choice == 2:
+            decoded = decoder(encoded)
+            print("The encoded password is " +str(encoded) + ", and the original password is " +str(decoded) + ".")
         if choice==3:
             break
 if __name__=="__main__":
